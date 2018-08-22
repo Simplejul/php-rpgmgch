@@ -15,14 +15,27 @@ class User
     public function setId(){
         return $this->id = $i;
     }
+    public function getId(){
+        return $this->id;
+    }
+
     public function setEmail(){
         return $this->email = $e;
     }
+    public function getEmail(){
+        return $this->email;
+    }
+
     public function setCreatedAt(){
         return $this->createdAt = $c;
     }
-    public function get(){
-        return $this->str;
+    public function getCreatedAt(){
+        return $this->createdAt;
+    }
+    
+    public function getAll(){
+        $prop = "id: ".$this->id."; email: ".$this->email."; created at: ".$this->createdAt;
+        return $this->prop = $prop;
     }
 }
 
