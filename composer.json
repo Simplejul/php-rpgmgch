@@ -1,0 +1,12 @@
+{
+    "name": "julien/php-rpgmgch",
+    "authors": [
+        {
+            "name": "Simplejul",
+            "email": "simplejul@protonmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^7.3"
+    }
+}
