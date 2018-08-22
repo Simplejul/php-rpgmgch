@@ -6,10 +6,11 @@ class UserTest extends TestCase
     public function testAttribute() {
         $this->assertClassHasAttribute('id', User::class);
         $this->assertClassHasAttribute('email', User::class);
-        $this->assertClassHasAttribute('createAt', User::class);
+        $this->assertClassHasAttribute('createdAt', User::class);
     }
     public function testGetAll(){
-        $this->assertContains($this->id);
+        $testUser = new User("007","bond@james","90s");
+        $this->assertStringStartsWith('id:', $testUser->getAll());
     }
 
 }
