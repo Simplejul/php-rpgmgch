@@ -11,7 +11,9 @@
 <h1>LOL</h1>
     <?php
         $users = require ('users.php');
+
         $products = require ('products.php');
+
 
         foreach ($clients as $client) {
             echo ($client->getAll());
@@ -21,6 +23,7 @@
             echo ($product->getAll());
             echo "<br />";
         }
+        
         $date1 = date("Y-m-d");
         $date2 = "2014-05-17";
         $timestamp1 = strtotime($date1);
