@@ -7,6 +7,12 @@ class Vegetable extends Product
     private $productorName;
     private $expiresAt;
 
+    public function __construct ($i, $n, $p, $productor, $expire){
+        parent::__construct($i, $n, $p);
+        $this->productorName = $productor;
+        $this->expiresAt = $expire;
+    }
+
     public function setProductorName(){
         return $this->productorName = $productor;
     }
@@ -29,7 +35,7 @@ class Vegetable extends Product
         if($timestamp1 == $timestamp2){
             echo "$date1 is equal to the $date2";
         }else{
-            echo ($timestamp1>$timestamp2)? "$date1 is greater than the $date2": "$date2 is greater than the $date1";
+            echo ($timestamp1>$timestamp2)? "stop, you'll be sick": "ok, you can";
         }
 
     }

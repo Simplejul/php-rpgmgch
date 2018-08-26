@@ -9,37 +9,51 @@
 
 </head>
 <body>
-<h1>LOL</h1>
+
     <?php
 
         $products = require_once ('products.php');
 
-        foreach ($products as $product) {
-            echo ($product->getAll());
-            echo "<br />";
-        }
+        // foreach ($products as $product) {
+        //     echo ($product->getAll());
+        //     echo "<br />";
+        //     print_r($product);
+        // }
     ?>
 
-        <table>
+        <table class="tab">
             <thead>
                 <tr>
-                    <th colspan="3">The table of clients</th>
+                    <th colspan="7">The table of clients</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>ID</td>
-                    <td>Email</td>
-                    <td>Created Date</td>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Prod. Name</td>
+                    <td>Expires At</td>
+                    <td>is fresh</td>
+                    <td>Brand</td>
                 </tr>
                 
                     <?php
                         foreach ($products as $product) {
-                            echo '<tr><td>'.$product->getId().'</td>'.
-                            '<td>'.$product->getEmail().'</td>'.
-                            '<td>'.$product->getCreatedAt().'</td></tr>';
+                    ?>
+                    
+                            <tr>
+                            <td><?php echo $product->getId() ?></td>         <td><?php echo $product->getName() ?></td>
+                            <td><?php echo $product->getPrice() ?></td>
+                            <td><?php echo (method_exists ($product , 'getProductorName'))?  $product->getProductorName(): "XXX" ?></td>
+                            <td><?php echo (method_exists ($product , 'getExpiresAt'))? $product->getExpiresAt() : "XXX" ?></td>
+                            <td><?php echo (method_exists ($product , 'IsFresh'))? $product->isFresh() : "XXX" ?></td>
+                            <td><?php echo (method_exists ($product , 'getBrand'))? $product->getBrand() : "XXX" ?></td></tr>
+
+                    <?php
                         };
                     ?>
+                   
                 
             </tbody>
             <!-- <tfoot>

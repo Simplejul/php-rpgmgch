@@ -27,7 +27,7 @@ class Product
     }
 
     public function setPrice(){
-        return $this->price = $c;
+        return $this->price = $p;
     }
     public function getPrice(){
         return $this->price;
@@ -37,6 +37,7 @@ class Product
         $prop = "id: ".$this->id."<br/> name: ".$this->name."<br/> price: ".$this->price;
         return $this->prop = $prop;
     }
+
 }
 
 ?>
